@@ -45,7 +45,18 @@ The first cell downloads this repository into Colab, so the helper code in `prot
 
 ## Reference results
 
-_Reference results are being computed and will be added here._
+Default settings of each notebook, seed 42. Your numbers in Colab will be close but not identical (GPUs are not perfectly deterministic).
+
+| Model | Parameters | Epochs | Validation Q3 | CB513 Q3 | CB513 macro F1 | Helix F1 | Strand F1 | Coil F1 |
+|---|---|---|---|---|---|---|---|---|
+| Baseline: always coil | 0 | – | – | 0.431 | – | – | – | – |
+| Baseline: amino-acid propensity | 0 | – | – | 0.489 | 0.450 | – | – | – |
+| MLP (window of 15) | 157,123 | 15 | 0.690 | **0.688** | 0.671 | 0.722 | 0.577 | 0.715 |
+| 1D CNN (3 layers) | 370,819 | 15 | 0.710 | **0.706** | 0.691 | 0.746 | 0.605 | 0.724 |
+
+Reference numbers for the BiLSTM and Transformer are not included yet: they were too slow to train on the CPU used to prepare this repository. Run notebooks 03 and 04 in Colab (with `SAVE_TO_DRIVE = True`) and notebook 05 will show your own results next to these.
+
+For context: single-sequence methods in the literature reach roughly 70–75% Q3 on CB513, and the best methods using alignments or protein language models reach 85–88%.
 
 ## How to run on your own computer (optional)
 
