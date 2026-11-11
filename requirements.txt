@@ -1,0 +1,8 @@
+# Google Colab already has all of these. For a local install, see README.md
+# (install PyTorch first, following https://pytorch.org/get-started/locally/).
+torch>=2.1
+numpy
+pandas
+scikit-learn
+matplotlib
+jupyter
